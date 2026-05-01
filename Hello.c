@@ -36,7 +36,7 @@ int main(void)
 	
 //	Sleep(500);
 
-	uint8_t buff[5];
+	uint8_t buff[4];
 	mcp2221_i2c_state_t state = MCP2221_I2C_IDLE;
 	
 	mcp2221_i2cState(myDev, &state);
@@ -52,7 +52,7 @@ int main(void)
 	mcp2221_i2cGet(myDev, buff, sizeof(buff));
 	puts("Get complete");
 
-	printf("  Temp: %02d %02d %02d %02d %02d\n", buff[0], buff[1], buff[2], buff[3], buff[4]);
+	printf("  Temp: %02d %02d %02d %02d\n", buff[0], buff[1], buff[2], buff[3]);
 
 	mcp2221_exit();
 	
